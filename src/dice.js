@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import ReactDice from "react-dice-complete";
 import "react-dice-complete/dist/react-dice-complete.css";
 import random from "random";
+import Timer from "react-compound-timer";
 class Dice extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +46,18 @@ class Dice extends Component {
   render() {
     return (
       <Fragment>
+        <div className="timer">
+          <Timer initialTime={60000} direction="backward">
+            {() => (
+              <React.Fragment>
+                <Timer.Minutes /> Minutes :
+                <Timer.Seconds /> seconds
+              </React.Fragment>
+            )}
+          </Timer>
+        </div>
+        <br></br>
+
         <button className="roll" onClick={() => this.rollAll()}>
           Roll Dice
         </button>
@@ -58,6 +71,8 @@ class Dice extends Component {
           disableIndividual="true"
           ref={(dice) => (this.reactDice = dice)}
         />
+        <h3>={this.state.sum}</h3>
+        <h2>Sum Number</h2>
         {this.state.op.map((key) => {
           return (
             <button className="roll" onClick={() => this.handleResult(key)}>
@@ -65,8 +80,6 @@ class Dice extends Component {
             </button>
           );
         })}
-
-        <h1>{this.state.sum}</h1>
       </Fragment>
     );
   }
