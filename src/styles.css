@@ -1,0 +1,39 @@
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.Controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.Controls p {
+  width: 150px;
+  padding: 0 1em;
+  font-size: 1.5em;
+  line-height: 0;
+}
+
+.Controls button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 1.5em;
+}
+
+.roll {
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  background: #aaaaaa;
+  margin-bottom: 1em;
+}
+h1 {
+  color: black;
+}
